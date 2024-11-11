@@ -1,0 +1,59 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/db
+    username: postgres
+    password: postgres
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: "telegram-business-controller-app"
+  boot:
+    admin:
+      client:
+        url: "http://localhost:8080"
+        enabled: true
+        auto-registration: true
+        instance:
+          name: ${spring.application.name}
+          metadata:
+            user.name:
+            user.password:
+        username:
+        password:
+  security:
+    user:
+      name:
+      password:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+bot:
+  name: "Test bot business api"
+  token: ""
+marketplace:
+  wildberries:
+    endpoint: ""
+    token: ""
+  yandex:
+    endpoint: ""
+    itemEndpoint: ""
+    businessId: ""
+    token: ""
+  ozon:
+    endpoint: ""
+    token: ""
+    clientId: ""
+  website:
+    token: ""
+
+
